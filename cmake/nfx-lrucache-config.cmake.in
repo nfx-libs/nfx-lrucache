@@ -1,0 +1,42 @@
+#==============================================================================
+# nfx-lrucache - CMake Package Configuration
+#==============================================================================
+# This file provides CMake targets for the nfx-lrucache library.
+# 
+# Usage:
+#   find_package(nfx-lrucache REQUIRED)
+#   target_link_libraries(your_target PRIVATE nfx-lrucache::nfx-lrucache)  # Header-only interface library
+#
+# Available target:
+#   nfx-lrucache::nfx-lrucache - Header-only interface library (LRU cache with sliding expiration)
+#==============================================================================
+
+@PACKAGE_INIT@
+
+# Version information
+set(NFX_LRUCACHE_VERSION "@PROJECT_VERSION@")
+set(NFX_LRUCACHE_VERSION_MAJOR "@PROJECT_VERSION_MAJOR@")
+set(NFX_LRUCACHE_VERSION_MINOR "@PROJECT_VERSION_MINOR@")
+set(NFX_LRUCACHE_VERSION_PATCH "@PROJECT_VERSION_PATCH@")
+
+# Installation paths (for reference)
+set_and_check(NFX_LRUCACHE_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+set_and_check(NFX_LRUCACHE_LIB_DIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@")
+
+# Our library dependencies (none - self-contained library)
+
+# Include the targets file
+include("${CMAKE_CURRENT_LIST_DIR}/nfx-lrucache-targets.cmake")
+
+# For multi-config generators, include config-specific targets if available
+if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/nfx-lrucache-targets-${CMAKE_BUILD_TYPE}.cmake")
+    include("${CMAKE_CURRENT_LIST_DIR}/nfx-lrucache-targets-${CMAKE_BUILD_TYPE}.cmake")
+endif()
+
+# Verify that the expected targets are available
+if(NOT TARGET nfx-lrucache::nfx-lrucache)
+    message(FATAL_ERROR "nfx-lrucache installation is broken: interface library target not found")
+endif()
+
+# Check that the requested components are available
+check_required_components(nfx-lrucache)
