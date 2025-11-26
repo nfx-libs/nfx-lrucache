@@ -151,7 +151,26 @@ nfx-lrucache includes API documentation generated with Doxygen.
 The complete API documentation is available online at:
 **https://nfx-libs.github.io/nfx-lrucache**
 
-## Usage Examples
+#### Building Documentation Locally
+
+```bash
+# Configure with documentation enabled
+cmake .. -DCMAKE_BUILD_TYPE=Release -DNFX_LRUCACHE_BUILD_DOCUMENTATION=ON
+
+# Build the documentation
+cmake --build . --target nfx-lrucache-documentation
+```
+
+#### Requirements
+
+- **Doxygen** - Documentation generation tool
+- **Graphviz Dot** (optional) - For generating class diagrams
+
+#### Accessing Local Documentation
+
+After building, open `./build/doc/html/index.html` in your web browser.
+
+## Usage Example
 
 ### Basic Cache Operations
 

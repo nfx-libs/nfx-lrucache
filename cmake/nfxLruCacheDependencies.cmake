@@ -2,9 +2,9 @@
 # nfx-lrucache - Dependencies configuration
 #==============================================================================
 
-#----------------------------
+#----------------------------------------------
 # Output configuration
-#----------------------------
+#----------------------------------------------
 
 set(_SAVED_CMAKE_REQUIRED_QUIET     ${CMAKE_REQUIRED_QUIET})
 set(_SAVED_CMAKE_MESSAGE_LOG_LEVEL  ${CMAKE_MESSAGE_LOG_LEVEL})
@@ -27,9 +27,9 @@ else()
 endif()
 set(FETCHCONTENT_QUIET OFF)
 
-#----------------------------
+#----------------------------------------------
 # Dependency declarations
-#----------------------------
+#----------------------------------------------
 
 # --- Google test ---
 if(NFX_LRUCACHE_BUILD_TESTS)
@@ -87,9 +87,9 @@ if(NFX_LRUCACHE_BUILD_BENCHMARKS)
 	endif()
 endif()
 
-#----------------------------
+#----------------------------------------------
 # Dependency fetching
-#----------------------------
+#----------------------------------------------
 
 if(NFX_LRUCACHE_BUILD_TESTS)
 	if(NOT GTest_FOUND)
@@ -103,9 +103,9 @@ if(NFX_LRUCACHE_BUILD_BENCHMARKS)
 	endif()
 endif()
 
-#----------------------------
+#----------------------------------------------
 # Cleanup
-#----------------------------
+#----------------------------------------------
 
 set(CMAKE_REQUIRED_QUIET ${_SAVED_CMAKE_REQUIRED_QUIET})
 set(CMAKE_MESSAGE_LOG_LEVEL ${_SAVED_CMAKE_MESSAGE_LOG_LEVEL})

@@ -35,9 +35,9 @@ endif()
 # Tests source files
 #----------------------------------------------
 
-set(TEST_SOURCES)
+set(test_sources)
 
-list(APPEND TEST_SOURCES
+list(APPEND test_sources
 	TESTS_LruCache.cpp
 )
 
@@ -45,7 +45,7 @@ list(APPEND TEST_SOURCES
 # Configure test executables
 #----------------------------------------------
 
-foreach(test_source ${TEST_SOURCES})
+foreach(test_source ${test_sources})
 	get_filename_component(test_target_name ${test_source} NAME_WE)
 
 	if(NOT TARGET ${test_target_name})

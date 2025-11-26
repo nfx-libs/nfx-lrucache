@@ -39,14 +39,14 @@ install(
 # Install library targets
 #----------------------------------------------
 
-set(INSTALL_TARGETS)
+set(install_targets)
 
 # Header-only interface library
-list(APPEND INSTALL_TARGETS ${PROJECT_NAME})
+list(APPEND install_targets ${PROJECT_NAME})
 
-if(INSTALL_TARGETS)
+if(install_targets)
 	install(
-		TARGETS ${INSTALL_TARGETS}
+		TARGETS ${install_targets}
 		EXPORT nfx-lrucache-targets
 		ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 			COMPONENT Development
@@ -157,4 +157,4 @@ if(NFX_LRUCACHE_BUILD_DOCUMENTATION)
 	endif()
 endif()
 
-message(STATUS "Installation configured for targets: ${INSTALL_TARGETS}")
+message(STATUS "Installation configured for targets: ${install_targets}")

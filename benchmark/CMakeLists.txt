@@ -15,9 +15,9 @@ endif()
 # Benchmarks source files
 #----------------------------------------------
 
-set(BENCHMARK_SOURCES)
+set(benchmark_sources)
 
-list(APPEND BENCHMARK_SOURCES
+list(APPEND benchmark_sources
 	BM_LruCache.cpp
 )
 
@@ -25,7 +25,7 @@ list(APPEND BENCHMARK_SOURCES
 # Configure benchmark executables
 #----------------------------------------------
 
-foreach(benchmark_source ${BENCHMARK_SOURCES})
+foreach(benchmark_source ${benchmark_sources})
 	get_filename_component(benchmark_target_name ${benchmark_source} NAME_WE)
 	if(NOT TARGET ${benchmark_target_name})
 		add_executable(${benchmark_target_name} ${benchmark_source})
