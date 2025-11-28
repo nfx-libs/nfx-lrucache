@@ -45,7 +45,7 @@ include(GNUInstallDirs)
 # Directory configuration
 #----------------------------------------------
 
-set(NFX_LRUCACHE_DIR          "${PROJECT_SOURCE_DIR}"    CACHE PATH  "Root directory"   )
+set(NFX_LRUCACHE_DIR          "${PROJECT_SOURCE_DIR}"        CACHE PATH  "Root directory"   )
 set(NFX_LRUCACHE_INCLUDE_DIR  "${NFX_LRUCACHE_DIR}/include"  CACHE PATH  "Include directory")
 
 #----------------------------------------------
